@@ -2,7 +2,7 @@
 
 This API is implemented in order to integrate front-end with Galaxy through a RestAPI.
 
-##Requirements
+## Requirements
 
 - ### Build Project
 
