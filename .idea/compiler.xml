@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Gateway_API_main" target="1.8" />
+      <module name="Gateway_API_test" target="1.8" />
+      <module name="newAPI_main" target="1.8" />
+      <module name="newAPI_test" target="1.8" />
+      <module name="spring-boot-postgresql-hibernate-thymeleaf-gradle-example_main" target="1.8" />
+      <module name="spring-boot-postgresql-hibernate-thymeleaf-gradle-example_test" target="1.8" />
+      <module name="spring-boot-spring-security-postgresSQL-hibernate-themeleaf-gradle_main" target="1.8" />
+      <module name="spring-boot-spring-security-postgresSQL-hibernate-themeleaf-gradle_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
