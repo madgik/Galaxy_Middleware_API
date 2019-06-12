@@ -6,10 +6,10 @@
 package gr.di.uoa.kk.gatewayApi.helpers;
 
 public class GenParameters {
-    public static final String jwtSecret = "hbpSecret";
-    public static final String jwtIssuer = "mip.humanbrainproject.eu";
-    public static final String galaxyURL = "http://88.197.53.102";
-    public static final String galaxyApiKey = "b330573c1fa511187998cb3233647d34";
+    public static final String jwtSecret = "";
+    public static final String jwtIssuer = "";
+    public static final String galaxyURL = "";
+    public static final String galaxyApiKey = "";
 
     public static String getJwtSecret() {
         return jwtSecret;
