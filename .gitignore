@@ -149,4 +149,4 @@ fabric.properties
 .idea/sonarlint
 
 **/application.properties
-**/GenParameters.*
+src/main/java/gr/di/uoa/kk/gatewayApi/helpers/GenParameters.java
