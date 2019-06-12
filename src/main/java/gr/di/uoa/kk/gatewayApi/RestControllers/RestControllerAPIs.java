@@ -17,6 +17,7 @@ import gr.di.uoa.kk.gatewayApi.RestControllers.Retrofit.RetroFitGalaxyClients;
 import gr.di.uoa.kk.gatewayApi.RestControllers.Retrofit.RetrofitClientInstance;
 import gr.di.uoa.kk.gatewayApi.dto.GetWorkflowResultsFromGalaxyDtoResponse;
 import gr.di.uoa.kk.gatewayApi.dto.PostWorkflowToGalaxyDtoResponse;
+import gr.di.uoa.kk.gatewayApi.helpers.GenParameters;
 import gr.di.uoa.kk.gatewayApi.helpers.LogHelper;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
@@ -44,13 +45,9 @@ class RestControllerAPIs {
 
     private static final Logger logger = LoggerFactory.getLogger(RestControllerAPIs.class);
 
-    //The galaxy URL
-    @Value("${kk.app.galaxyURL}")
-    private String url;
+    private String url = GenParameters.getGalaxyURL();
 
-    //The galaxy ApiKey
-    @Value("${kk.app.galaxyApiKey}")
-    private String apiKey;
+    private String apiKey = GenParameters.getGalaxyApiKey();
 
     /**
      * Get all the workflows with few details.

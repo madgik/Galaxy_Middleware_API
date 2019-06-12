@@ -5,6 +5,7 @@
 
 package gr.di.uoa.kk.gatewayApi.security;
 
+import gr.di.uoa.kk.gatewayApi.helpers.GenParameters;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,8 +17,7 @@ public class JwtProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
-    @Value("${kk.app.jwtSecret}")
-    private String jwtSecret;
+    private String jwtSecret = GenParameters.getJwtSecret();
 
     public String getSubjectFromJwtToken(String token) {
         return Jwts.parser()

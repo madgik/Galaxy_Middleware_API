@@ -23,6 +23,8 @@
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter-log4j2:2.1.5.RELEASE" />
           <element id="library" level="project" name="Gradle: com.github.jmchilton.blend4j:blend4j:0.2.0" />
           <element id="library" level="project" name="Gradle: com.squareup.retrofit2:converter-gson:2.4.0" />
+          <element id="library" level="project" name="Gradle: com.squareup.retrofit2:retrofit:2.5.0" />
+          <element id="library" level="project" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.12.1" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-log4j12:1.7.26" />
           <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-slf4j-impl:2.7" />
           <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-starter:1.5.3.RELEASE" />
@@ -30,8 +32,6 @@
           <element id="library" level="project" name="Gradle: org.slf4j:jul-to-slf4j:1.7.25" />
           <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.26" />
-          <element id="library" level="project" name="Gradle: com.squareup.retrofit2:retrofit:2.5.0" />
-          <element id="library" level="project" name="Gradle: com.squareup.okhttp3:logging-interceptor:3.12.1" />
           <element id="library" level="project" name="Gradle: org.hibernate:hibernate-validator:5.3.5.Final" />
           <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.8" />
           <element id="library" level="project" name="Gradle: org.postgresql:postgresql:42.1.1" />
@@ -55,9 +55,9 @@
           <element id="library" level="project" name="Gradle: org.codehaus.jackson:jackson-mapper-asl:1.9.12" />
           <element id="library" level="project" name="Gradle: org.codehaus.jackson:jackson-core-asl:1.9.12" />
           <element id="library" level="project" name="Gradle: com.google.guava:guava:16.0.1" />
+          <element id="library" level="project" name="Gradle: com.squareup.okhttp3:okhttp:3.12.1" />
           <element id="library" level="project" name="Gradle: com.google.code.gson:gson:2.8.0" />
           <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
-          <element id="library" level="project" name="Gradle: com.squareup.okhttp3:okhttp:3.12.1" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.8.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.8.RELEASE" />
           <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.8.RELEASE" />

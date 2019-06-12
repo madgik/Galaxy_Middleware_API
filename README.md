@@ -18,30 +18,23 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 1. Checkout project
 2. Open command prompt
 3. Navigate to project directory
-4. Make your own application.properties file :
+4. Update the settings in the Java parameters file :
     ```sh
-    vi src/main/resources/application.properties
+    vi src/main/java/gr/di/uoa/kk/gatewayApi/helpers/GenParameters.java
     ```
-5. You can follow this template for application.properties file :
-    ```
-    # App Properties
-    kk.app.jwtSecret=theJwtSecret
-    kk.app.galaxyURL=YourGalaxyURL
-    kk.app.galaxyApiKey=YourGalaxyApiKey
-    ```
-6. In the project directory :
+5. In the project directory :
     ```sh
     gradle clean
     ```
-7. In the project directory :
+6. In the project directory :
     ```sh
     gradle war
     ```
-8. In the project directory :
+7. In the project directory :
     ```sh
     cd build/libs
     ```
-9. File .war is in this folder
+8. File .war is in this folder
 
 ## Deploy:
 1. Install Application Server(i.e. [Tomcat](http://tomcat.apache.org/))
