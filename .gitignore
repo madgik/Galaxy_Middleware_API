@@ -149,3 +149,4 @@ fabric.properties
 .idea/sonarlint
 
 **/application.properties
+**/GenParameters.*
