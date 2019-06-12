@@ -18,23 +18,53 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 1. Checkout project
 2. Open command prompt
 3. Navigate to project directory
-4. Update the settings in the Java parameters file :
+4. Create settings Java parameters file :
     ```sh
     vi src/main/java/gr/di/uoa/kk/gatewayApi/helpers/GenParameters.java
     ```
-5. In the project directory :
+5. You can follow this template in order to make the Java parameters file :
+    ```java
+    package gr.di.uoa.kk.gatewayApi.helpers;
+    
+    public class GenParameters {
+        public static final String jwtSecret = "";
+        public static final String jwtIssuer = "";
+        public static final String galaxyURL = "";
+        public static final String galaxyApiKey = "";
+        public static final String test = "";
+    
+    
+        public static String getJwtSecret() {
+            return jwtSecret;
+        }
+    
+        public static String getJwtIssuer() {
+            return jwtIssuer;
+        }
+    
+        public static String getGalaxyURL() {
+            return galaxyURL;
+        }
+    
+        public static String getGalaxyApiKey() {
+            return galaxyApiKey;
+        }
+    }
+    ```
+
+6. In the project directory :
     ```sh
     gradle clean
     ```
-6. In the project directory :
+7. In the project directory :
     ```sh
     gradle war
     ```
-7. In the project directory :
+8. In the project directory :
     ```sh
     cd build/libs
     ```
-8. File .war is in this folder
+9. File .war is in this folder
 
 ## Deploy:
 1. Install Application Server(i.e. [Tomcat](http://tomcat.apache.org/))
