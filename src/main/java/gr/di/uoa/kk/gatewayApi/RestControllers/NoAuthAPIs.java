@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/noAuth/")
 public class NoAuthAPIs {
-
     private static final Logger logger = LoggerFactory.getLogger(NoAuthAPIs.class);
 }
 

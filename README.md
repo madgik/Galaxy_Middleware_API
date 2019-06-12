@@ -26,6 +26,7 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
     ```
     # App Properties
     kk.app.jwtSecret=theJwtSecret
+    kk.app.jwtIssuer=theJwtIssuer
     kk.app.galaxyURL=YourGalaxyURL
     kk.app.galaxyApiKey=YourGalaxyApiKey
     ```
@@ -48,3 +49,5 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 2. Stop Application Server if running(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/shutdown.sh ```)
 3. Copy .war file in the application folder(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and copy into webapps directory ```cp path/to/war webapps/ ```)
 4. Start Application Server(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/startup.sh ```)
+
+## Deploy:
