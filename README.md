@@ -27,12 +27,10 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
     package gr.di.uoa.kk.gatewayApi.helpers;
     
     public class GenParameters {
-        public static final String jwtSecret = "";
-        public static final String jwtIssuer = "";
-        public static final String galaxyURL = "";
-        public static final String galaxyApiKey = "";
-        public static final String test = "";
-    
+        private static final String jwtSecret = "";
+        private static final String jwtIssuer = "";
+        private static final String galaxyURL = "";
+        private static final String galaxyApiKey = "";    
     
         public static String getJwtSecret() {
             return jwtSecret;
