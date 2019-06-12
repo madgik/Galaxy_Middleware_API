@@ -10,9 +10,9 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import gr.di.uoa.kk.gatewayApi.helpers.GenParameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,11 +20,9 @@ public class JwtProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
-    @Value("${kk.app.jwtSecret}")
-    private String jwtSecret;
+    private String jwtSecret = GenParameters.getJwtSecret();
 
-    @Value("${kk.app.jwtIssuer}")
-    private String jwtIssuer;
+    private String jwtIssuer = GenParameters.getJwtIssuer();
 
     public String getSubjectFromJwtToken(String token) {
         DecodedJWT jwt = null;
