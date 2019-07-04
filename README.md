@@ -18,17 +18,17 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 1. Checkout project
 2. Open command prompt
 3. Navigate to project directory
-4. Make your own application.properties file :
+4. Make your own config.properties file :
     ```sh
-    vi src/main/resources/application.properties
+    vi src/main/resources/config.properties
     ```
-5. You can follow this template for application.properties file :
+5. You can follow this template for config.properties file :
     ```
     # App Properties
-    kk.app.jwtSecret=theJwtSecret
-    kk.app.jwtIssuer=theJwtIssuer
-    kk.app.galaxyURL=YourGalaxyURL
-    kk.app.galaxyApiKey=YourGalaxyApiKey
+    jwtSecret=theJwtSecret
+    jwtIssuer=theJwtIssuer
+    galaxyURL=YourGalaxyURL
+    galaxyApiKey=YourGalaxyApiKey
     ```
 6. In the project directory :
     ```sh
@@ -50,4 +50,4 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 3. Copy .war file in the application folder(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and copy into webapps directory ```cp path/to/war webapps/ ```)
 4. Start Application Server(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/startup.sh ```)
 
-## Deploy:
+## Test:

@@ -149,3 +149,5 @@ fabric.properties
 .idea/sonarlint
 
 **/application.properties
+**/config.properties
+

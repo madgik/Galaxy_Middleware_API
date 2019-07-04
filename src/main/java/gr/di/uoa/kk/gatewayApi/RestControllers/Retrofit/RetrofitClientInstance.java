@@ -15,7 +15,7 @@ public class RetrofitClientInstance {
 
     private static Retrofit retrofit;
 
-    private static final String BASE_URL = GenParameters.getGalaxyURL() + "/api/";
+    private static final String BASE_URL = GenParameters.getGenParamInstance().getGalaxyURL() + "/api/";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {

@@ -23,7 +23,6 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,10 +45,10 @@ class RestControllerAPIs {
     private static final Logger logger = LoggerFactory.getLogger(RestControllerAPIs.class);
 
     //The galaxy URL
-    private String url = GenParameters.getGalaxyURL();
+    private final String url = GenParameters.getGenParamInstance().getGalaxyURL();
 
     //The galaxy ApiKey
-    private String apiKey = GenParameters.getGalaxyApiKey();
+    private final String apiKey = GenParameters.getGenParamInstance().getGalaxyApiKey();
 
     /**
      * Get all the workflows with few details.

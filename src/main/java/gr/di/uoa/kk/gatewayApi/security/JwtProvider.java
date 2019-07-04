@@ -20,9 +20,9 @@ public class JwtProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
-    private String jwtSecret = GenParameters.getJwtSecret();
+    private final String jwtSecret = GenParameters.getGenParamInstance().getJwtSecret();
 
-    private String jwtIssuer = GenParameters.getJwtIssuer();
+    private final String jwtIssuer = GenParameters.getGenParamInstance().getJwtIssuer();
 
     public String getSubjectFromJwtToken(String token) {
         DecodedJWT jwt = null;
@@ -41,6 +41,7 @@ public class JwtProvider {
     public boolean validateJwtToken(String authToken) {
         try {
             logger.info("jwtSecret : " + jwtSecret);
+            logger.info("jwtIssuer : " + jwtIssuer);
             Algorithm algorithm = Algorithm.HMAC512(jwtSecret);
             JWTVerifier verifier = JWT.require(algorithm)
                     .withIssuer(jwtIssuer)
