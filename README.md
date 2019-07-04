@@ -45,10 +45,15 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 9. File .war is in this folder
 
 ## Deploy:
+
+#### Via Command Line
 1. Install Application Server(i.e. [Tomcat](http://tomcat.apache.org/))
 2. Stop Application Server if running(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/shutdown.sh ```)
 3. Copy .war file in the application folder(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and copy into webapps directory ```cp path/to/war webapps/ ```)
 4. Start Application Server(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/startup.sh ```)
+
+#### Via Docker
+docker push kkech/middlewareapidocker:1.0.0
 
 ## Test:
 
