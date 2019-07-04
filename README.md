@@ -53,7 +53,7 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 4. Start Application Server(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/startup.sh ```)
 
 #### Via Docker
-docker push kkech/middlewareapidocker:1.0.0
+docker pull kkech/middlewareapidocker:1.0.0
 
 ## Test:
 
