@@ -1,4 +1,4 @@
-# Gateway API
+# Middleware API
 
 This API is implemented in order to integrate front-end with Galaxy through a RestAPI.
 
@@ -51,3 +51,5 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 4. Start Application Server(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/startup.sh ```)
 
 ## Test:
+
+Generate a JWT token with HMAC512 security. Then update jwtToken variable in [Postman](https://www.getpostman.com/) and test the API calls.
