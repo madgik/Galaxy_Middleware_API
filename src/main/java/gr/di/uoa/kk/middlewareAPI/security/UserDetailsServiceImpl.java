@@ -3,7 +3,7 @@
  * Copyright (c) 2019. MIT License
  */
 
-package gr.di.uoa.kk.gatewayApi.security;
+package gr.di.uoa.kk.middlewareAPI.security;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

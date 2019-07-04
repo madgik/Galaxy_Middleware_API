@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="Gateway_API_main" target="1.8" />
       <module name="Gateway_API_test" target="1.8" />
+      <module name="Middleware_API_main" target="1.8" />
+      <module name="Middleware_API_test" target="1.8" />
       <module name="newAPI_main" target="1.8" />
       <module name="newAPI_test" target="1.8" />
       <module name="spring-boot-postgresql-hibernate-thymeleaf-gradle-example_main" target="1.8" />

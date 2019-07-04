@@ -3,7 +3,7 @@
  * Copyright (c) 2019. MIT License
  */
 
-package gr.di.uoa.kk.gatewayApi.RestControllers;
+package gr.di.uoa.kk.middlewareAPI.RestControllers;
 
 import com.github.jmchilton.blend4j.galaxy.GalaxyInstance;
 import com.github.jmchilton.blend4j.galaxy.GalaxyInstanceFactory;
@@ -13,12 +13,12 @@ import com.github.jmchilton.blend4j.galaxy.beans.WorkflowDetails;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import gr.di.uoa.kk.gatewayApi.RestControllers.Retrofit.RetroFitGalaxyClients;
-import gr.di.uoa.kk.gatewayApi.RestControllers.Retrofit.RetrofitClientInstance;
-import gr.di.uoa.kk.gatewayApi.dto.GetWorkflowResultsFromGalaxyDtoResponse;
-import gr.di.uoa.kk.gatewayApi.dto.PostWorkflowToGalaxyDtoResponse;
-import gr.di.uoa.kk.gatewayApi.helpers.GenParameters;
-import gr.di.uoa.kk.gatewayApi.helpers.LogHelper;
+import gr.di.uoa.kk.middlewareAPI.RestControllers.Retrofit.RetroFitGalaxyClients;
+import gr.di.uoa.kk.middlewareAPI.RestControllers.Retrofit.RetrofitClientInstance;
+import gr.di.uoa.kk.middlewareAPI.dto.GetWorkflowResultsFromGalaxyDtoResponse;
+import gr.di.uoa.kk.middlewareAPI.dto.PostWorkflowToGalaxyDtoResponse;
+import gr.di.uoa.kk.middlewareAPI.helpers.GenParameters;
+import gr.di.uoa.kk.middlewareAPI.helpers.LogHelper;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 import org.slf4j.Logger;

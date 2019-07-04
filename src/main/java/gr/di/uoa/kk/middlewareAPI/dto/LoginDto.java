@@ -3,7 +3,7 @@
  * Copyright (c) 2019. MIT License
  */
 
-package gr.di.uoa.kk.gatewayApi.dto;
+package gr.di.uoa.kk.middlewareAPI.dto;
 
 import org.hibernate.validator.constraints.NotBlank;
 

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Gateway_API.iml" filepath="$PROJECT_DIR$/.idea/modules/Gateway_API.iml" group="Gateway_API" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Gateway_API_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Gateway_API_main.iml" group="Gateway_API" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Gateway_API_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Gateway_API_test.iml" group="Gateway_API" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Middleware_API.iml" filepath="$PROJECT_DIR$/.idea/modules/Middleware_API.iml" group="Middleware_API" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Middleware_API_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Middleware_API_main.iml" group="Middleware_API" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Middleware_API_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Middleware_API_test.iml" group="Middleware_API" />
     </modules>
   </component>
 </project>

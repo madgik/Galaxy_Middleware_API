@@ -3,11 +3,11 @@
  * Copyright (c) 2019. MIT License
  */
 
-package gr.di.uoa.kk.gatewayApi.RestControllers.Retrofit;
+package gr.di.uoa.kk.middlewareAPI.RestControllers.Retrofit;
 
 import com.google.gson.JsonObject;
-import gr.di.uoa.kk.gatewayApi.dto.GetWorkflowResultsFromGalaxyDtoResponse;
-import gr.di.uoa.kk.gatewayApi.dto.PostWorkflowToGalaxyDtoResponse;
+import gr.di.uoa.kk.middlewareAPI.dto.GetWorkflowResultsFromGalaxyDtoResponse;
+import gr.di.uoa.kk.middlewareAPI.dto.PostWorkflowToGalaxyDtoResponse;
 import retrofit2.Call;
 import retrofit2.http.*;
 

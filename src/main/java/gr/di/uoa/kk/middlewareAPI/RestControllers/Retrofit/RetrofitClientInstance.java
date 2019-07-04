@@ -3,9 +3,9 @@
  * Copyright (c) 2019. MIT License
  */
 
-package gr.di.uoa.kk.gatewayApi.RestControllers.Retrofit;
+package gr.di.uoa.kk.middlewareAPI.RestControllers.Retrofit;
 
-import gr.di.uoa.kk.gatewayApi.helpers.GenParameters;
+import gr.di.uoa.kk.middlewareAPI.helpers.GenParameters;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;

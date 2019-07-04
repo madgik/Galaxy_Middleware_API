@@ -3,7 +3,7 @@
  * Copyright (c) 2019. MIT License
  */
 
-package gr.di.uoa.kk.gatewayApi.RestControllers;
+package gr.di.uoa.kk.middlewareAPI.RestControllers;
 
 
 import org.slf4j.Logger;
