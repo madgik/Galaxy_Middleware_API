@@ -53,8 +53,19 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 4. Start Application Server(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/startup.sh ```)
 
 #### Via Docker
-docker pull kkech/middlewareapidocker:1.0.0
-
+1. Make configuration using environment variable file :
+    ```sh
+    vi env.list
+    ```
+2. You can follow this template for env.list file :
+    ```
+    jwtSecret=theJwtSecret
+    jwtIssuer=theJwtIssuer
+    galaxyURL=YourGalaxyURL
+    galaxyApiKey=YourGalaxyApiKey
+    ```
+3. docker pull kkech/middlewareapidocker:latest
+4. docker run --env-file env.list -p 80:8080 middlewareapidocker
 ## Test:
 
 Generate a JWT token with HMAC512 security. Then update jwtToken variable in [Postman](https://www.getpostman.com/) and test the API calls.

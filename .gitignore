@@ -150,4 +150,5 @@ fabric.properties
 
 **/application.properties
 **/config.properties
+**/env.list
 

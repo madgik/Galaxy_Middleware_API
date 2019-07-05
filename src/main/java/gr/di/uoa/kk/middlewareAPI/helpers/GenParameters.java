@@ -36,10 +36,20 @@ public class GenParameters {
     public static GenParameters getGenParamInstance() {
         if (genParams == null) {
             genParams = new GenParameters();
-            File file = null;
-            try {
-                file = new ClassPathResource("config.properties").getFile();
-                try (InputStream input = new FileInputStream(file)) {
+
+            genParams.setJwtSecret(System.getenv("jwtSecret"));
+            genParams.setJwtIssuer(System.getenv("jwtIssuer"));
+            genParams.setGalaxyURL(System.getenv("galaxyURL"));
+            genParams.setGalaxyApiKey(System.getenv("galaxyApiKey"));
+
+            //If environment variable not exists read from file.
+            if (genParams.getJwtSecret() == null){
+                logger.info("->>>>>>>Reading from file");
+
+                File file = null;
+                try {
+                    file = new ClassPathResource("config.properties").getFile();
+                    InputStream input = new FileInputStream(file);
                     Properties prop = new Properties();
 
                     // load a properties file
@@ -50,9 +60,9 @@ public class GenParameters {
                     genParams.setJwtIssuer(prop.getProperty("jwtIssuer"));
                     genParams.setGalaxyURL(prop.getProperty("galaxyURL"));
                     genParams.setGalaxyApiKey(prop.getProperty("galaxyApiKey"));
+                } catch (IOException e) {
+                    logger.error("Cannot initialize GenParameters from config file", e);
                 }
-            } catch (IOException e) {
-                logger.error("Cannot initialize GenParameters from config file", e);
             }
         }
         return genParams;
