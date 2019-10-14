@@ -29,6 +29,10 @@ public class GenParameters {
 
     private String galaxyApiKey;
 
+    private String galaxyReverseProxyUsername;
+
+    private String galaxyReverseProxyPassword;
+
     private GenParameters(){
 
     }
@@ -41,6 +45,9 @@ public class GenParameters {
             genParams.setJwtIssuer(System.getenv("jwtIssuer"));
             genParams.setGalaxyURL(System.getenv("galaxyURL"));
             genParams.setGalaxyApiKey(System.getenv("galaxyApiKey"));
+            genParams.setGalaxyReverseProxyUsername(System.getenv("galaxyReverseProxyUsername"));
+            genParams.setGalaxyReverseProxyPassword(System.getenv("galaxyReverseProxyPassword"));
+
 
             //If environment variable not exists read from file.
             if (genParams.getJwtSecret() == null){
@@ -60,6 +67,8 @@ public class GenParameters {
                     genParams.setJwtIssuer(prop.getProperty("jwtIssuer"));
                     genParams.setGalaxyURL(prop.getProperty("galaxyURL"));
                     genParams.setGalaxyApiKey(prop.getProperty("galaxyApiKey"));
+                    genParams.setGalaxyReverseProxyUsername(prop.getProperty("galaxyReverseProxyUsername"));
+                    genParams.setGalaxyReverseProxyPassword(prop.getProperty("galaxyReverseProxyPassword"));
                 } catch (IOException e) {
                     logger.error("Cannot initialize GenParameters from config file", e);
                 }
@@ -98,5 +107,21 @@ public class GenParameters {
 
     private void setGalaxyApiKey(String galaxyApiKey) {
         this.galaxyApiKey = galaxyApiKey;
+    }
+
+    public String getGalaxyReverseProxyUsername() {
+        return galaxyReverseProxyUsername;
+    }
+
+    public void setGalaxyReverseProxyUsername(String galaxyReverseProxyUsername) {
+        this.galaxyReverseProxyUsername = galaxyReverseProxyUsername;
+    }
+
+    public String getGalaxyReverseProxyPassword() {
+        return galaxyReverseProxyPassword;
+    }
+
+    public void setGalaxyReverseProxyPassword(String galaxyReverseProxyPassword) {
+        this.galaxyReverseProxyPassword = galaxyReverseProxyPassword;
     }
 }

@@ -17,6 +17,7 @@ import gr.di.uoa.kk.middlewareAPI.RestControllers.Retrofit.RetroFitGalaxyClients
 import gr.di.uoa.kk.middlewareAPI.RestControllers.Retrofit.RetrofitClientInstance;
 import gr.di.uoa.kk.middlewareAPI.dto.GetWorkflowResultsFromGalaxyDtoResponse;
 import gr.di.uoa.kk.middlewareAPI.dto.PostWorkflowToGalaxyDtoResponse;
+import gr.di.uoa.kk.middlewareAPI.dto.StringDtoResponse;
 import gr.di.uoa.kk.middlewareAPI.helpers.GenParameters;
 import gr.di.uoa.kk.middlewareAPI.helpers.LogHelper;
 import org.codehaus.jettison.json.JSONException;
@@ -49,6 +50,35 @@ class RestControllerAPIs {
 
     //The galaxy ApiKey
     private final String apiKey = GenParameters.getGenParamInstance().getGalaxyApiKey();
+
+    /**
+     * Test if integration works.
+     *
+     * @return Return a @{@link ResponseEntity}.
+     */
+    @GetMapping(value = "getTestIntegration", produces = "application/json")
+    @ResponseStatus(value = HttpStatus.OK)
+    public ResponseEntity getTestIntegration(@AuthenticationPrincipal UserDetails userDetails){
+        logger.info(LogHelper.logUser(userDetails) + "Get Test Integration called");
+        return ResponseEntity.ok(new StringDtoResponse("success"));
+    }
+
+    /**
+     * Get Galaxy Reverse Proxy basic access token.
+     *
+     * @return Return a @{@link ResponseEntity} with the token.
+     */
+    @GetMapping(value = "getGalaxyBasicAccessToken", produces = "application/json")
+    @ResponseStatus(value = HttpStatus.OK)
+    public ResponseEntity getGalaxyBasicAccessToken(@AuthenticationPrincipal UserDetails userDetails){
+        logger.info(LogHelper.logUser(userDetails) + "Get Galaxy Basic Access Token called");
+        String username = GenParameters.getGenParamInstance().getGalaxyReverseProxyUsername();
+        String password = GenParameters.getGenParamInstance().getGalaxyReverseProxyPassword();
+
+        String stringEncoded = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
+        logger.info(LogHelper.logUser(userDetails) + "Get Galaxy Basic Access Token completed");
+        return ResponseEntity.ok(new StringDtoResponse(stringEncoded));
+    }
 
     /**
      * Get all the workflows with few details.
@@ -226,6 +256,66 @@ class RestControllerAPIs {
         logger.info(LogHelper.logUser(userDetails) + "Get workflow status completed");
 
         return ResponseEntity.ok(jsonString);
+    }
+
+    /**
+     * Get the status of a multiple workflows.
+     * TODO:Under Development
+     * @param httpEntity : The @{@link HttpEntity} to get the body of the request which is the workflow ID.
+     * @return Return a @{@link ResponseEntity}.
+     */
+    @GetMapping(value = "/getMultipleWorkflowStatus", produces = "application/json")
+    @ResponseStatus(value = HttpStatus.OK)
+    public ResponseEntity getMultipleWorkflowStatus(@AuthenticationPrincipal UserDetails userDetails, HttpEntity<String> httpEntity) {
+        logger.info(LogHelper.logUser(userDetails) + "Get Multiple workflow status called");
+
+        //In order to parse Json with undefined number of value/key
+        String json = httpEntity.getBody();
+        JSONObject jObject  = null;
+        try {
+            jObject = new JSONObject(json);
+        } catch (JSONException e) {
+            logger.error(LogHelper.logUser(userDetails) + "Cannot parse JSON", e);
+        }
+        Map<String,String> allJsonParams = new HashMap<String,String>();
+        Iterator iter = jObject.keys();
+
+        while(iter.hasNext()){
+            String key = (String)iter.next();
+            String value = null;
+            try {
+                value = jObject.getString(key);
+                System.out.println(key + ":" + value);
+            } catch (JSONException e) {
+                logger.error(LogHelper.logUser(userDetails) + "Cannot parse JSON", e);
+            }
+            logger.info(LogHelper.logUser(userDetails) + "Put to map: " + key + " : " + value);
+            allJsonParams.put(key,value);
+        }
+
+        StringBuffer stringBuffer = new StringBuffer();
+        for (Map.Entry<String, String> entry : allJsonParams.entrySet()) {
+            RetroFitGalaxyClients service = RetrofitClientInstance.getRetrofitInstance().create(RetroFitGalaxyClients.class);
+            Call<Object> call = service.getWorkflowStatusFromGalaxy(entry.getValue(),apiKey);
+
+            String jsonString = null;
+            try {
+                Response<Object> response = call.execute();
+                if(response.code() >= 400){
+                    logger.error(LogHelper.logUser(userDetails) + "Resonse code: " + response.code() + "" + " with body: " + response.errorBody().string());
+                    return ResponseEntity.badRequest().build();
+                }
+                jsonString = new Gson().toJson(response.body());
+                logger.info(LogHelper.logUser(userDetails) + jsonString);
+                stringBuffer.append(jsonString + ",");
+                logger.info(LogHelper.logUser(userDetails) + "----" + response.body() + "----" + response.code());
+            } catch (IOException e) {
+                logger.error(LogHelper.logUser(userDetails) + "Cannot make the call to Galaxy API", e);
+            }
+        }
+        stringBuffer.deleteCharAt(stringBuffer.length() - 1);
+        logger.info(LogHelper.logUser(userDetails) + "Get Multiple workflow status completed");
+        return ResponseEntity.ok(stringBuffer.toString());
     }
 
     /**

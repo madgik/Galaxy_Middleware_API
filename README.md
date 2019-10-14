@@ -1,6 +1,6 @@
-# Middleware API
+# Galaxy Middleware API
 
-This API is implemented in order to integrate front-end with Galaxy through a RestAPI.
+This API is implemented in order to integrate the MIP front-end with Galaxy through a RestAPI.
 
 ## Requirements
 
@@ -13,59 +13,44 @@ This API is implemented in order to integrate front-end with Galaxy through a Re
 
     - Application Server(i.e. [Tomcat](http://tomcat.apache.org/))
 
-## Build:
+## Building the docker image:
 
-1. Checkout project
-2. Open command prompt
-3. Navigate to project directory
-4. Make your own config.properties file :
-    ```sh
-    vi src/main/resources/config.properties
-    ```
-5. You can follow this template for config.properties file :
-    ```
-    # App Properties
-    jwtSecret=theJwtSecret
-    jwtIssuer=theJwtIssuer
-    galaxyURL=YourGalaxyURL
-    galaxyApiKey=YourGalaxyApiKey
-    ```
-6. In the project directory :
+1. In the project directory :
     ```sh
     gradle clean
     ```
-7. In the project directory :
+2. In the project directory :
     ```sh
     gradle war
     ```
-8. In the project directory :
-    ```sh
-    cd build/libs
-    ```
-9. File .war is in this folder
+3. docker build -t hbpmip/galaxy_middleware_api .
 
 ## Deploy:
 
-#### Via Command Line
-1. Install Application Server(i.e. [Tomcat](http://tomcat.apache.org/))
-2. Stop Application Server if running(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/shutdown.sh ```)
-3. Copy .war file in the application folder(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and copy into webapps directory ```cp path/to/war webapps/ ```)
-4. Start Application Server(i.e. In [Tomcat](http://tomcat.apache.org/) navigate to root directory and run ```./bin/startup.sh ```)
+Use the following command after changing the appropriate variables:
 
-#### Via Docker
-1. Make configuration using environment variable file :
-    ```sh
-    vi env.list
-    ```
-2. You can follow this template for env.list file :
+```sh
+docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='username' -e galaxyReverseProxyPassword='password' -p 80:8080 hbpmip/galaxy_middleware_api:v1.0.0
+```
+
+   
+If you want, you can save all the environmental variables and use the following instructions to deploy:
+
+1. You can follow this template to create the env.list file :
     ```
     jwtSecret=theJwtSecret
     jwtIssuer=theJwtIssuer
     galaxyURL=YourGalaxyURL
     galaxyApiKey=YourGalaxyApiKey
+    galaxyReverseProxyUsername=username
+    galaxyReverseProxyPassword=password
     ```
-3. docker pull kkech/middlewareapidocker:latest
-4. docker run --env-file env.list -p 80:8080 middlewareapidocker
+2. Run the docker image:
+    ```sh
+    docker run --env-file env.list -p 80:8080 hbpmip/galaxy_middleware_api:v1.0.0
+    ```
+
+
 ## Test:
 
 Generate a JWT token with HMAC512 security. Then update jwtToken variable in [Postman](https://www.getpostman.com/) and test the API calls.
