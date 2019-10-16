@@ -25,6 +25,13 @@ This API is implemented in order to integrate the MIP front-end with Galaxy thro
     ```
 3. docker build -t hbpmip/galaxy_middleware_api .
 
+## Dependencies:
+
+1. Galaxy has to be installed
+2. Galaxy username and password during installation has to be the same as "galaxyReverseProxyUsername", "galaxyReverseProxyPassword".
+3. Galaxy user has to produce api key and pass it as parameter "galaxyApiKey"
+
+
 ## Deploy:
 
 Use the following command after changing the appropriate variables:
@@ -33,7 +40,6 @@ Use the following command after changing the appropriate variables:
 docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='username' -e galaxyReverseProxyPassword='password' -p 80:8080 hbpmip/galaxy_middleware_api:v1.0.0
 ```
 
-   
 If you want, you can save all the environmental variables and use the following instructions to deploy:
 
 1. You can follow this template to create the env.list file :
