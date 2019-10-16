@@ -38,8 +38,8 @@ This API is implemented in order to integrate the MIP front-end with Galaxy thro
 Use the following command after changing the appropriate variables:
 
 ```sh
-docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='username' -e galaxyReverseProxyPassword='password' -p 80:8080 hbpmip/galaxy_middleware_api:v1.0.0
-```
+docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='username' -e galaxyReverseProxyPassword='password' -p 80:8080 kkech/middlewareapidocker:latest
+``
 
 If you want, you can save all the environmental variables and use the following instructions to deploy:
 
