@@ -27,7 +27,7 @@ This API is implemented in order to integrate the MIP front-end with Galaxy thro
 
 ## Dependencies:
 
-1. Galaxy has to be installed
+1. Galaxy has to be installed(https://github.com/madgik/galaxy)
 2. Galaxy username and password during installation has to be the same as "galaxyReverseProxyUsername", "galaxyReverseProxyPassword".
 3. Galaxy user has to produce api key and pass it as parameter "galaxyApiKey"
 4. "jwtSecret" has to be the same as HBPMedical/portal-backend.
