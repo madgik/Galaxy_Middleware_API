@@ -27,18 +27,25 @@ This API is implemented in order to integrate the MIP front-end with Galaxy thro
 
 ## Dependencies:
 
-1. Galaxy has to be installed(https://github.com/madgik/galaxy)
-2. "galaxyReverseProxyUsername", "galaxyReverseProxyPassword"  has to be the same as Galaxy Reverse proxy(https://github.com/madgik/galaxy/tree/master/Docker_Build_Scripts) username and password.
-3. Galaxy user has to produce api key and pass it as parameter "galaxyApiKey"
-4. "jwtSecret" has to be the same as HBPMedical/portal-backend.
-5. "jwtIssuer" has to be the same as HBPMedical/portal-backend.
+1. Galaxy has to be installed (https://github.com/madgik/galaxy/tree/master/Docker_Build_Scripts).
+2. After installing Galaxy an API key should be created:
+    - Enter Galaxy from the browser.
+    - Select the "User" Drop Down menu, on the navigation bar.
+    - Select the "Preferences" option.
+    - Select the "Manage API Key" option.
+    - "Create a new key"
+    - Copy the key so we can use it in the next step.
 
 ## Deploy:
 
 Use the following command after changing the appropriate variables:
+  - "galaxyApiKey" should be replaced by the API key created in Galaxy.
+  - "galaxyReverseProxyPassword" has to be the same as the password given when installing Galaxy.
+  - "jwtSecret" has to be the same as in the HBPMedical/portal-backend.
+  - "jwtIssuer" has to be the same as in the HBPMedical/portal-backend.
 
 ```sh
-docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='username' -e galaxyReverseProxyPassword='password' -p 80:8080 kkech/middlewareapidocker:latest
+docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='admin' -e galaxyReverseProxyPassword='password' -p 80:8080 kkech/middlewareapidocker:latest
 ```
 
 If you want, you can save all the environmental variables and use the following instructions to deploy:
@@ -49,7 +56,7 @@ If you want, you can save all the environmental variables and use the following 
     jwtIssuer=theJwtIssuer
     galaxyURL=YourGalaxyURL
     galaxyApiKey=YourGalaxyApiKey
-    galaxyReverseProxyUsername=username
+    galaxyReverseProxyUsername=admin
     galaxyReverseProxyPassword=password
     ```
 2. Run the docker image:
