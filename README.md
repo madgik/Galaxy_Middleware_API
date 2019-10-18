@@ -47,7 +47,7 @@ Use the following command after changing the appropriate variables:
   - Change the tag name of the docker "galaxy_middleware_api" image to the version you want to install.
 
 ```sh
-docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='admin' -e galaxyReverseProxyPassword='password' -p 80:8080 hbpmip/galaxy_middleware_api:v1.0.0
+docker run -d -e jwtSecret='1234567890' -e jwtIssuer='Online JWT Builder' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='admin' -e galaxyReverseProxyPassword='password' -p 80:8080 hbpmip/galaxy_middleware_api:v0.3.1
 ```
 
 If you want, you can save all the environmental variables and use the following instructions to deploy:
@@ -63,7 +63,7 @@ If you want, you can save all the environmental variables and use the following 
     ```
 2. Run the docker image:
     ```sh
-    docker run --env-file env.list -p 80:8080 hbpmip/galaxy_middleware_api:v1.0.0
+    docker run --env-file env.list -p 80:8080 hbpmip/galaxy_middleware_api:v0.3.1
     ```
 
 
