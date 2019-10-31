@@ -66,6 +66,9 @@ If you want, you can save all the environmental variables and use the following 
     ```
 
 
+You can use the api from the following endpoint `localhost:PORT/Galaxy_Middleware_API-1.0.0-SNAPSHOT/api/getWorkflows`
+
+
 ## Test:
 
 Generate a JWT token with HMAC512 security. Then update jwtToken variable in [Postman](https://www.getpostman.com/) and test the API calls.
