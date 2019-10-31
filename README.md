@@ -66,7 +66,8 @@ If you want, you can save all the environmental variables and use the following 
     ```
 
 
-You can use the api from the following endpoint `localhost:PORT/Galaxy_Middleware_API-1.0.0-SNAPSHOT/api/getWorkflows`
+You can use the api from the following endpoint
+```http://localhost:PORT/Galaxy_Middleware_API-1.0.0-SNAPSHOT/api/getWorkflows```
 
 
 ## Test:
