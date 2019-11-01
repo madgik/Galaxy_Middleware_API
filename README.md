@@ -46,7 +46,7 @@ Use the following command after changing the appropriate variables:
   - Change the tag name of the docker "galaxy_middleware_api" image to the version you want to install.
 
 ```sh
-docker run -d -e jwtSecret='1234567890' -e jwtIssuer='mip.humanbrainproject.eu' -e galaxyURL='http://88.197.53.123/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='admin' -e galaxyReverseProxyPassword='password' -p 8091:8080 hbpmip/galaxy_middleware_api:v0.3.1
+docker run -d -e jwtSecret='1234567890' -e jwtIssuer='mip.humanbrainproject.eu' -e galaxyURL='http://88.197.53.100:8090/' -e galaxyApiKey='1234541541351' -e galaxyReverseProxyUsername='admin' -e galaxyReverseProxyPassword='password' -p 8091:8080 hbpmip/galaxy_middleware_api:v0.3.1
 ```
 
 If you want, you can save all the environmental variables and use the following instructions to deploy:
