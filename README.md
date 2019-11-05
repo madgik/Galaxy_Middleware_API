@@ -4,26 +4,14 @@ This API is implemented in order to integrate the MIP front-end with Galaxy thro
 
 ## Requirements
 
-- ### Build Project
-
-    - [Java8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-    - [Gradle](https://gradle.org/)
-
 - ### Deploy Project
 
     - Application Server(i.e. [Tomcat](http://tomcat.apache.org/))
 
-## Building the docker image:
+- ### Build Project
 
-1. In the project directory :
-    ```sh
-    gradle clean
-    ```
-2. In the project directory :
-    ```sh
-    gradle war
-    ```
-3. docker build -t hbpmip/galaxy_middleware_api .
+    - [Java8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+    - [Gradle](https://gradle.org/)
 
 ## Dependencies:
 
@@ -73,3 +61,18 @@ You can use the api from the following endpoint
 ## Test:
 
 Generate a JWT token with HMAC512 security. Then update jwtToken variable in [Postman](https://www.getpostman.com/) and test the API calls.
+
+
+## Building the docker image:
+
+If you want to create a new image of Galaxy_Middleware_API you can follow these instructions:
+
+1. In the project directory :
+    ```sh
+    gradle clean
+    ```
+2. In the project directory :
+    ```sh
+    gradle war
+    ```
+3. docker build -t hbpmip/galaxy_middleware_api .
