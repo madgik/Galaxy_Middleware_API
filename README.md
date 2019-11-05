@@ -50,7 +50,7 @@ If you want, you can save all the environmental variables and use the following 
     ```
 2. Run the docker image:
     ```sh
-    docker run --env-file env.list -p 8091:8080 hbpmip/galaxy_middleware_api:v0.3.1
+    docker run -d --env-file env.list -p 8091:8080 hbpmip/galaxy_middleware_api:v0.3.1
     ```
 
 
